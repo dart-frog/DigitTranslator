@@ -70,7 +70,22 @@ public class UserInterface {
 		else if (num == 20){
 			return "twenty";
 		}
-		else{
+		else if (num == 30){
+			return "thirty";
+		}
+		else if (num == 40){
+			return "forty";
+		}
+		else if (num == 50){
+			return "fifty";
+		}
+		else if (num < 30){
+			return getNumber(20) + " " + getNumber(num%20);
+		}
+		else if (num < 40){
+			return getNumber(30) + " " + getNumber(num%30);
+		}
+		else{	
 			return null;
 		}
 		

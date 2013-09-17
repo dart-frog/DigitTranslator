@@ -27,4 +27,12 @@ public class TranslatorTest {
 		assertEquals("number expected to be nineteen", "nineteen", UserInterface.getNumber(19));
 		assertEquals("number expected to be twenty", "twenty", UserInterface.getNumber(20));
 	}
+	@Test
+	public void canGoOverTwenty(){
+		assertEquals("number expected to be twenty one", "twenty one", UserInterface.getNumber(21));
+		assertEquals("number expected to be thirty two", "thirty two", UserInterface.getNumber(32));
+		assertEquals("number expected to be fourty three", "forty three", UserInterface.getNumber(43));
+		assertEquals("number expected to be fifty four", "fifty four", UserInterface.getNumber(54));
+		assertEquals("number expected to be sixty five", "sixty five", UserInterface.getNumber(65));
+	}
 }
