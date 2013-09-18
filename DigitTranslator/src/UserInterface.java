@@ -10,84 +10,21 @@ public class UserInterface {
 		
 	}
 	public static String getNumber(int num){
-		if (num == 1){
-			return "one";
+		if(num < 20){
+			return  Dictionary.getDict(num);
 		}
-		else if (num == 2){
-			return "two";
+		else if (num%10 == 0){
+			return Dictionary.getDict(num);
 		}
-		else if (num == 3){
-			return "three";
+		else if (num < 100){
+			int tail = num % 10;
+			num = num - tail; 
+			return Dictionary.getDict(num) + " " + Dictionary.getDict(tail);
 		}
-		else if (num == 4){
-			return "four";
-		}
-		else if (num == 5){
-			return "five";
-		}
-		else if (num == 6){
-			return "six";
-		}
-		else if (num == 7){
-			return "seven";
-		}
-		else if(num == 8){
-			return "eight";
-		}
-		else if (num == 9){
-			return "nine";
-		}
-		else if (num == 10){
-			return "ten";
-		}
-		else if (num == 11){
-			return "eleven";
-		}
-		else if (num == 12){
-			return "twelve";
-		}
-		else if (num == 13){
-			return "thirteen";
-		}
-		else if(num == 14){
-			return "fourteen";
-		}
-		else if (num == 15){
-			return "fifteen";
-		}
-		else if (num == 16){
-			return "sixteen";
-		}
-		else if (num == 17){
-			return "seventeen";
-		}
-		else if (num == 18){
-			return "eighteen";
-		}
-		else if (num == 19){
-			return "nineteen";
-		}
-		else if (num == 20){
-			return "twenty";
-		}
-		else if (num == 30){
-			return "thirty";
-		}
-		else if (num == 40){
-			return "forty";
-		}
-		else if (num == 50){
-			return "fifty";
-		}
-		else if (num < 30){
-			return getNumber(20) + " " + getNumber(num%20);
-		}
-		else if (num < 40){
-			return getNumber(30) + " " + getNumber(num%30);
-		}
-		else{	
+		else{
 			return null;
 		}
+		
 		
 	}
 }
