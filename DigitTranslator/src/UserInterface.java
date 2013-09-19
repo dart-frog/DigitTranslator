@@ -11,18 +11,27 @@ public class UserInterface {
 	}
 	public static String getNumber(int num){
 		if(num < 20){
-			return  Dictionary.getDict(num);
+			return  Dictionary.getDict(num) + " ";
 		}
 		else if (num%10 == 0){
-			return Dictionary.getDict(num);
+			return Dictionary.getDict(num) + " ";
 		}
 		else if (num < 100){
 			int tail = num % 10;
 			num = num - tail; 
 			return Dictionary.getDict(num) + " " + Dictionary.getDict(tail);
 		}
+		else if (num < 1000){
+			int front = num / (int) Math.pow(10, 2);
+			return Dictionary.getDict(num) + "hundred"; 
+		}
 		else{
-			return null;
+			int length = (int)(Math.log10(num));
+			int frontCount = length % 3 + 1;
+			int front = num / (int)Math.pow(10, length - frontCount + 1);
+			int tail = (int)(num % Math.pow(10,length));
+			num = (int)Math.pow(10, length);
+			return getNumber(front) + Dictionary.getDict(num) + " " + getNumber(tail);
 		}
 		
 		
