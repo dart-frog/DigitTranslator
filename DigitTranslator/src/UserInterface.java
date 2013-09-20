@@ -13,17 +13,18 @@ public class UserInterface {
 		if(num < 20){
 			return  Dictionary.getDict(num) + " ";
 		}
-		else if (num%10 == 0){
+		else if (num%10 == 0 && num < 91){
 			return Dictionary.getDict(num) + " ";
 		}
 		else if (num < 100){
 			int tail = num % 10;
 			num = num - tail; 
-			return Dictionary.getDict(num) + " " + Dictionary.getDict(tail);
+			return Dictionary.getDict(num) + " " + Dictionary.getDict(tail) + " ";
 		}
 		else if (num < 1000){
-			int front = num / (int) Math.pow(10, 2);
-			return Dictionary.getDict(num) + "hundred"; 
+			int tail = num % 100;
+			int front = num / 100;
+			return getNumber(front) + "hundred " + getNumber(tail); 
 		}
 		else{
 			int length = (int)(Math.log10(num));

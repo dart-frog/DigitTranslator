@@ -3,7 +3,11 @@ public class Dictionary {
 	public static String getDict(int num){
 		String[] digits = {"one","two","three", "four", "five", "six", "seven", "eight", "nine","ten","eleven","twelve", "thirteen","fourteen","fifteen", "sixteen", "seventeen", "eighteen", "nineteen",};
 		String[] doubleDigits = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy","eighty", "ninety"};
-		String[] multiDigits = {"thousand"}; 
+		String[] multiDigits = {"thousand","million","billion"}; 
+		if (num < 1){
+			return "";
+		}
+		
 		if (num<20){
 			return digits[num-1];
 		}
@@ -11,7 +15,9 @@ public class Dictionary {
 			return doubleDigits[num/10 - 2];
 		}
 		else{
-			return multiDigits[0];
+			int size = (int)(Math.log10(num));
+			size = size - (size % 3);
+			return multiDigits[size / 3 -1];
 		}
 	}
 }

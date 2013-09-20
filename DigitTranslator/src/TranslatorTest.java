@@ -29,21 +29,23 @@ public class TranslatorTest {
 	}
 	@Test
 	public void canGoOverTwenty(){
-		assertEquals("number expected to be twenty one", "twenty one", UserInterface.getNumber(21));
+		assertEquals("number expected to be twenty one", "twenty one ", UserInterface.getNumber(21));
 		assertEquals("number expected to be thirty", "thirty ", UserInterface.getNumber(30));
-		assertEquals("number expected to be thirty two", "thirty two", UserInterface.getNumber(32));
-		assertEquals("number expected to be fourty three", "forty three", UserInterface.getNumber(43));
-		assertEquals("number expected to be fifty four", "fifty four", UserInterface.getNumber(54));
-		assertEquals("number expected to be sixty five", "sixty five", UserInterface.getNumber(65));
+		assertEquals("number expected to be thirty two", "thirty two ", UserInterface.getNumber(32));
+		assertEquals("number expected to be fourty three", "forty three ", UserInterface.getNumber(43));
+		assertEquals("number expected to be fifty four", "fifty four ", UserInterface.getNumber(54));
+		assertEquals("number expected to be sixty five", "sixty five ", UserInterface.getNumber(65));
 	}
 	@Test
 	public void canGoOver99(){
-		assertEquals("number expected to be one hundred", "one hundred", UserInterface.getNumber(100));
-		assertEquals("number expected to be seven hundred", "seven hundred", UserInterface.getNumber(700));
-		assertEquals("number expected to be eight hundred five", "eight hundred five", UserInterface.getNumber(805));
-		assertEquals("number expected to be five hundred sixty two", "five hundred sixty two", UserInterface.getNumber(862));
+		assertEquals("number expected to be one hundred", "one hundred  ", UserInterface.getNumber(100));
+		assertEquals("number expected to be seven hundred", "seven hundred  ", UserInterface.getNumber(700));
+		assertEquals("number expected to be eight hundred five", "eight hundred five ", UserInterface.getNumber(805));
+		assertEquals("number expected to be five hundred sixty two ", "eight hundred sixty two ", UserInterface.getNumber(862));
 	}@Test
 	public void andBeyond(){
-		assertEquals("number expected to be one thousand", "one thousand thirty one", UserInterface.getNumber(1031));
+		assertEquals("number expected to be one thousand thirty one", "one thousand thirty one ", UserInterface.getNumber(1031));
+		assertEquals("number expected to be ten thousand five hundred and fifty two", "ten thousand five hundred fifty two ", UserInterface.getNumber(10552));
+		assertEquals("number expected to be 121,324", "one hundred twenty one thousand three hundred twenty four", UserInterface.getNumber(121324));
 	}
 }
