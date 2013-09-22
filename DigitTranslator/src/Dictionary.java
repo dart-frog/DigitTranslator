@@ -1,9 +1,9 @@
 
 public class Dictionary {
 	public static String getDict(int num){
-		String[] digits = {"one","two","three", "four", "five", "six", "seven", "eight", "nine","ten","eleven","twelve", "thirteen","fourteen","fifteen", "sixteen", "seventeen", "eighteen", "nineteen",};
-		String[] doubleDigits = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy","eighty", "ninety"};
-		String[] multiDigits = {"thousand","million","billion"}; 
+		String[] digits = {"One","Two","Three", "Four", "Five", "Six", "Seven", "Eight", "Nine","Ten","Eleven","Twelve", "Thirteen","Fourteen","Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen",};
+		String[] doubleDigits = {"Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy","Eighty", "Ninety"};
+		String[] multiDigits = {"Thousand","Million","Billion"}; 
 		if (num < 1){
 			return "";
 		}
